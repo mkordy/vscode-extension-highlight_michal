@@ -18,6 +18,11 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 	context.subscriptions.push(disposable);
 
+	disposable = vscode.commands.registerCommand('highlight.clearLastWord', () => {
+		highlight.ClearLastWord();
+	});
+	context.subscriptions.push(disposable);
+
 	vscode.workspace.onDidChangeTextDocument(() => {
 		highlight.RefeshSelectedWords();
 	});

@@ -15,6 +15,11 @@ export class Highlight {
         this.DecorateSelectedWords();
     }
 
+    public ClearLastWord(): void {
+        this.selectedWords.pop();
+        this.DecorateSelectedWords();
+    }
+
     public SelectedWords(): void {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
